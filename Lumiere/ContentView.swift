@@ -69,9 +69,13 @@ struct ContentView: View {
         .onPasteCommand(of: [.png, .jpeg, .fileURL, .tiff]) { providers in
             for provider in providers where provider.canLoadObject(ofClass: NSImage.self) {
                 _ = provider.loadObject(ofClass: NSImage.self) { image, _ in
-                    guard let image = image as? NSImage else { return }
+                    guard let image = image as? NSImage,
+                        let imageData = image.tiffRepresentation
+                    else { return }
+
                     Task { @MainActor in
-                        viewModel.ingestImage(image, sourceLabel: "Paste")
+                        guard let pastedImage = NSImage(data: imageData) else { return }
+                        viewModel.ingestImage(pastedImage, sourceLabel: "Paste")
                     }
                 }
                 return
