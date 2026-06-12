@@ -2,6 +2,11 @@ import CoreML
 import CoreVideo
 import Foundation
 
+struct PixelMetrics: Sendable {
+    let mean: Double
+    let spread: Double
+}
+
 actor CoreMLInferenceService {
     enum InferenceError: LocalizedError {
         case modelLoadFailure(String)
@@ -48,7 +53,7 @@ actor CoreMLInferenceService {
         )
     }
 
-    func infer(_ type: ModelType, image: CVPixelBuffer) throws -> InferenceResult {
+    func infer(_ type: ModelType, metrics: PixelMetrics) throws -> InferenceResult {
         loadModel(type)
 
         guard modelCache[type] != nil else {
@@ -56,7 +61,6 @@ actor CoreMLInferenceService {
         }
 
         let startTime = Date()
-        let metrics = try sampleMetrics(from: image)
         let predictions = makePredictions(for: type, metrics: metrics)
         let confidence = predictionConfidence(from: metrics, type: type)
         modelCache[type]?.lastUsed = Date()
@@ -86,7 +90,7 @@ actor CoreMLInferenceService {
         }
     }
 
-    private func sampleMetrics(from pixelBuffer: CVPixelBuffer) throws -> (mean: Double, spread: Double) {
+    static func sampleMetrics(from pixelBuffer: CVPixelBuffer) throws -> PixelMetrics {
         CVPixelBufferLockBaseAddress(pixelBuffer, .readOnly)
         defer { CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly) }
 
@@ -128,10 +132,10 @@ actor CoreMLInferenceService {
             partial + pow(value - mean, 2)
         } / Double(samples.count)
 
-        return (mean, sqrt(variance))
+        return PixelMetrics(mean: mean, spread: sqrt(variance))
     }
 
-    private func makePredictions(for type: ModelType, metrics: (mean: Double, spread: Double)) -> [MLFeatureValue] {
+    private func makePredictions(for type: ModelType, metrics: PixelMetrics) -> [MLFeatureValue] {
         switch type {
         case .shadowDetection:
             return [
@@ -146,7 +150,7 @@ actor CoreMLInferenceService {
         }
     }
 
-    private func predictionConfidence(from metrics: (mean: Double, spread: Double), type: ModelType) -> Float {
+    private func predictionConfidence(from metrics: PixelMetrics, type: ModelType) -> Float {
         switch type {
         case .shadowDetection:
             return Float(min(1, max(0.2, metrics.spread * 2.2)))

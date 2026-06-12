@@ -36,8 +36,8 @@ final class ImageProcessingPipeline: Sendable {
         let preparedImage = resizedIfNeeded(image)
         let pixelBuffer = makePixelBuffer(from: preparedImage)
         let inference: InferenceResult?
-        if let pixelBuffer {
-            inference = try? await coreMLService.infer(.shadowDetection, image: pixelBuffer)
+        if let pixelBuffer, let metrics = try? CoreMLInferenceService.sampleMetrics(from: pixelBuffer) {
+            inference = try? await coreMLService.infer(.shadowDetection, metrics: metrics)
         } else {
             inference = nil
         }
@@ -137,8 +137,8 @@ final class ImageProcessingPipeline: Sendable {
         let preparedImage = resizedIfNeeded(image)
         let pixelBuffer = makePixelBuffer(from: preparedImage)
         let inference: InferenceResult?
-        if let pixelBuffer {
-            inference = try? await coreMLService.infer(.perspectiveCorrection, image: pixelBuffer)
+        if let pixelBuffer, let metrics = try? CoreMLInferenceService.sampleMetrics(from: pixelBuffer) {
+            inference = try? await coreMLService.infer(.perspectiveCorrection, metrics: metrics)
         } else {
             inference = nil
         }
