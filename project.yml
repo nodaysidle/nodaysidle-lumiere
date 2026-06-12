@@ -1,0 +1,18 @@
+name: Lumiere
+options:
+  bundleIdPrefix: com.lumiere
+  deploymentTarget:
+    macOS: 15.0
+  createIntermediateGroups: true
+targets:
+  Lumiere:
+    type: application
+    platform: macOS
+    sources:
+      - path: Lumiere
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.lumiere.app
+      SWIFT_VERSION: 6.0
+      GENERATE_INFOPLIST_FILE: YES
+    entitlements:
+      path: Lumiere.entitlements

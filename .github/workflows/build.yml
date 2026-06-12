@@ -1,0 +1,49 @@
+name: Build Lumiere
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Debug build
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build Debug app
+        run: |
+          xcodebuild \
+            -project Lumiere.xcodeproj \
+            -scheme Lumiere \
+            -configuration Debug \
+            -derivedDataPath build/DerivedData \
+            clean build
+
+      - name: Verify code signature
+        run: |
+          codesign --verify --deep --strict --verbose=2 \
+            build/DerivedData/Build/Products/Debug/Lumiere.app
+
+      - name: Package build artifact
+        run: |
+          ditto -c -k --keepParent \
+            build/DerivedData/Build/Products/Debug/Lumiere.app \
+            Lumiere-Debug.zip
+          shasum -a 256 Lumiere-Debug.zip > Lumiere-Debug.zip.sha256
+
+      - name: Upload Debug artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lumiere-Debug
+          path: |
+            Lumiere-Debug.zip
+            Lumiere-Debug.zip.sha256
+          if-no-files-found: error

@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A9000011B2C3D4E5F600001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9000111B2C3D4E5F600001 /* Assets.xcassets */; };
+		0A9000021B2C3D4E5F600001 /* LumiereLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */; };
+		175700A91C976AF4A1CF7A05 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72111B23FC7F9309E931CBA2 /* Notifications.swift */; };
+		1ADA74A9AA13471D7F1A0068 /* ImageProcessingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CED40747A760F9250EEFC3B /* ImageProcessingModels.swift */; };
+		2D651C0E644AA426495822E3 /* ClipboardMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */; };
+		330DF538885A6ACD76C55064 /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */; };
+		3D97054ED2AE6BA41481D2B5 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373F4B6D503763994A1F365 /* SettingsStore.swift */; };
+		54618AFBE1C7C47E12C82F15 /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8A7FFBEC9C9AC79CB30B6 /* Color+Palette.swift */; };
+		5E5535FC61A7103D17260C26 /* DrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E0C3CD415D857B48A3022 /* DrawingLayer.swift */; };
+		674ACC0738BC6D6BA1A458FD /* ImageCaptureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E06858E858EA33F520D055 /* ImageCaptureEvent.swift */; };
+		703CC639929B9213BA5CC780 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3483BD7163278207889B92EB /* UserSettings.swift */; };
+		7907A96A0074DD612E0CB78F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0FA0640765C6717ED2E2D /* Logger.swift */; };
+		7D12DD5A237B2871A618F055 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09935ECD3A5B4837DD248EF2 /* ContentView.swift */; };
+		8499558DACCD5345FE80D54F /* PanelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CEB0B01AFD70F5775C8B5 /* PanelManager.swift */; };
+		8F30884C720A59D0C5B0525A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD8C7FB3DE96FB5EC62FE2 /* Annotation.swift */; };
+		91735C2A045F562374B2D055 /* AnnotationRenderingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */; };
+		9ACCDF0344FDAEF2E5461D94 /* PanelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7229FBABC59BFD11CBF3C /* PanelState.swift */; };
+		A04EBA17089C5BCC86EC9E02 /* ImageProcessingPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C3C2BA3D062616EB1F131 /* ImageProcessingPipeline.swift */; };
+		AC1675D9FCA67E14E7C88FFD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E89682CD77EE13499A2BE75 /* SettingsView.swift */; };
+		B75A0112BC4124E0631F7725 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F8177FB8F8D3B95D46B155 /* MainViewModel.swift */; };
+		B9BFEF6363EC932BC4DBC04F /* LumiereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C29272774F45F1E4481B6 /* LumiereApp.swift */; };
+		BE33A40AB3C979BE1CC65BD9 /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49769371EA639B50DB0155D9 /* ImageDisplayView.swift */; };
+		C13F91259AEF16F170E79E37 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43CF5608BDECD210E1D6E77 /* CoreMLModels.swift */; };
+		C78F076A6B92B1F54CE5DC42 /* CoreMLInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */; };
+		CC600691A57AA1F35D65961E /* AnnotationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CAE6B61083F43BF968BDB /* AnnotationLayer.swift */; };
+		FC4B741F2CC591BC94ED1E52 /* ToolPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9583D801A0194AF72825BC69 /* ToolPreset.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A9000111B2C3D4E5F600001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */ = {isa = PBXFileReference; lastKnownFileType = image.svg; path = LumiereLogo.svg; sourceTree = "<group>"; };
+		0373F4B6D503763994A1F365 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		09935ECD3A5B4837DD248EF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0E89682CD77EE13499A2BE75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRenderingService.swift; sourceTree = "<group>"; };
+		301CEB0B01AFD70F5775C8B5 /* PanelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelManager.swift; sourceTree = "<group>"; };
+		3483BD7163278207889B92EB /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		49769371EA639B50DB0155D9 /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
+		52D8A7FFBEC9C9AC79CB30B6 /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
+		6ADD8C7FB3DE96FB5EC62FE2 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		6CED40747A760F9250EEFC3B /* ImageProcessingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingModels.swift; sourceTree = "<group>"; };
+		72111B23FC7F9309E931CBA2 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		73E06858E858EA33F520D055 /* ImageCaptureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureEvent.swift; sourceTree = "<group>"; };
+		9583D801A0194AF72825BC69 /* ToolPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPreset.swift; sourceTree = "<group>"; };
+		A43CF5608BDECD210E1D6E77 /* CoreMLModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModels.swift; sourceTree = "<group>"; };
+		B5D0FA0640765C6717ED2E2D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		C96CAE6B61083F43BF968BDB /* AnnotationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationLayer.swift; sourceTree = "<group>"; };
+		D33C3C2BA3D062616EB1F131 /* ImageProcessingPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingPipeline.swift; sourceTree = "<group>"; };
+		D67C29272774F45F1E4481B6 /* LumiereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiereApp.swift; sourceTree = "<group>"; };
+		DA0E0C3CD415D857B48A3022 /* DrawingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingLayer.swift; sourceTree = "<group>"; };
+		E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLInferenceService.swift; sourceTree = "<group>"; };
+		E5F8177FB8F8D3B95D46B155 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
+		F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitorService.swift; sourceTree = "<group>"; };
+		F9A15E6FD2DA369CE1FF5A2E /* Lumiere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumiere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE7229FBABC59BFD11CBF3C /* PanelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0A9000211B2C3D4E5F600001 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		0A9000221B2C3D4E5F600001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A9000111B2C3D4E5F600001 /* Assets.xcassets */,
+				0A9000211B2C3D4E5F600001 /* Brand */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0EF27D9DCBD7A0F63C80F906 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA0E0C3CD415D857B48A3022 /* DrawingLayer.swift */,
+				F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */,
+				49769371EA639B50DB0155D9 /* ImageDisplayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		17CEA63A0FF690F3E9F6CB62 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */,
+				F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */,
+				E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */,
+				D33C3C2BA3D062616EB1F131 /* ImageProcessingPipeline.swift */,
+				0373F4B6D503763994A1F365 /* SettingsStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3470C578329729D9ED3E2CC4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				72111B23FC7F9309E931CBA2 /* Notifications.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		34A9B6B2179743CBBCF6EB67 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0E89682CD77EE13499A2BE75 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		34C1E65B32394F87B73052F3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				34A9B6B2179743CBBCF6EB67 /* Settings */,
+				9190AEAABD6CDBFD3CDE976C /* UI */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		374417060A3D4E6210976006 /* Lumiere */ = {
+			isa = PBXGroup;
+			children = (
+				09935ECD3A5B4837DD248EF2 /* ContentView.swift */,
+				D67C29272774F45F1E4481B6 /* LumiereApp.swift */,
+				45BB291E04F094A858111654 /* Core */,
+				34C1E65B32394F87B73052F3 /* Features */,
+				E9D0089D51C1A11CDB8B256C /* Models */,
+				0A9000221B2C3D4E5F600001 /* Resources */,
+			);
+			path = Lumiere;
+			sourceTree = "<group>";
+		};
+		45BB291E04F094A858111654 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E5F8177FB8F8D3B95D46B155 /* MainViewModel.swift */,
+				3470C578329729D9ED3E2CC4 /* Events */,
+				A63DFE6A7706D11D697F2973 /* Logging */,
+				17CEA63A0FF690F3E9F6CB62 /* Services */,
+				9E6581E21D4CF3722F96811E /* Theme */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		46A76ED5AD1E7F1C1C941389 = {
+			isa = PBXGroup;
+			children = (
+				374417060A3D4E6210976006 /* Lumiere */,
+				FF40B2901E3EB0FF06319842 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		538C2A1C73180FE724EBA2EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE7229FBABC59BFD11CBF3C /* PanelState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7D6AD597DE42D9A743A3AEDF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				301CEB0B01AFD70F5775C8B5 /* PanelManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8A896B2D85CE2F1057DA2B5C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9583D801A0194AF72825BC69 /* ToolPreset.swift */,
+				3483BD7163278207889B92EB /* UserSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9190AEAABD6CDBFD3CDE976C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				538C2A1C73180FE724EBA2EE /* Models */,
+				7D6AD597DE42D9A743A3AEDF /* Services */,
+				0EF27D9DCBD7A0F63C80F906 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9E6581E21D4CF3722F96811E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				52D8A7FFBEC9C9AC79CB30B6 /* Color+Palette.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A63DFE6A7706D11D697F2973 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				B5D0FA0640765C6717ED2E2D /* Logger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		E9D0089D51C1A11CDB8B256C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6ADD8C7FB3DE96FB5EC62FE2 /* Annotation.swift */,
+				C96CAE6B61083F43BF968BDB /* AnnotationLayer.swift */,
+				A43CF5608BDECD210E1D6E77 /* CoreMLModels.swift */,
+				73E06858E858EA33F520D055 /* ImageCaptureEvent.swift */,
+				6CED40747A760F9250EEFC3B /* ImageProcessingModels.swift */,
+				8A896B2D85CE2F1057DA2B5C /* Settings */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF40B2901E3EB0FF06319842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9A15E6FD2DA369CE1FF5A2E /* Lumiere.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D059CE1091C04B3632B0619B /* Lumiere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F1559C31FD31817521AB845 /* Build configuration list for PBXNativeTarget "Lumiere" */;
+			buildPhases = (
+				0A9000311B2C3D4E5F600001 /* Resources */,
+				2AF4C85ADE81E6677F6DFD73 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lumiere;
+			packageProductDependencies = (
+			);
+			productName = Lumiere;
+			productReference = F9A15E6FD2DA369CE1FF5A2E /* Lumiere.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C09B2CA9C2A9695457A36D97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = C757404B69530CE0EE14CFF7 /* Build configuration list for PBXProject "Lumiere" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 46A76ED5AD1E7F1C1C941389;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D059CE1091C04B3632B0619B /* Lumiere */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A9000311B2C3D4E5F600001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A9000011B2C3D4E5F600001 /* Assets.xcassets in Resources */,
+				0A9000021B2C3D4E5F600001 /* LumiereLogo.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+	/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AF4C85ADE81E6677F6DFD73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F30884C720A59D0C5B0525A /* Annotation.swift in Sources */,
+				CC600691A57AA1F35D65961E /* AnnotationLayer.swift in Sources */,
+				91735C2A045F562374B2D055 /* AnnotationRenderingService.swift in Sources */,
+				2D651C0E644AA426495822E3 /* ClipboardMonitorService.swift in Sources */,
+				54618AFBE1C7C47E12C82F15 /* Color+Palette.swift in Sources */,
+				7D12DD5A237B2871A618F055 /* ContentView.swift in Sources */,
+				C78F076A6B92B1F54CE5DC42 /* CoreMLInferenceService.swift in Sources */,
+				C13F91259AEF16F170E79E37 /* CoreMLModels.swift in Sources */,
+				5E5535FC61A7103D17260C26 /* DrawingLayer.swift in Sources */,
+				330DF538885A6ACD76C55064 /* GlassPanel.swift in Sources */,
+				674ACC0738BC6D6BA1A458FD /* ImageCaptureEvent.swift in Sources */,
+				BE33A40AB3C979BE1CC65BD9 /* ImageDisplayView.swift in Sources */,
+				1ADA74A9AA13471D7F1A0068 /* ImageProcessingModels.swift in Sources */,
+				A04EBA17089C5BCC86EC9E02 /* ImageProcessingPipeline.swift in Sources */,
+				7907A96A0074DD612E0CB78F /* Logger.swift in Sources */,
+				B9BFEF6363EC932BC4DBC04F /* LumiereApp.swift in Sources */,
+				B75A0112BC4124E0631F7725 /* MainViewModel.swift in Sources */,
+				175700A91C976AF4A1CF7A05 /* Notifications.swift in Sources */,
+				8499558DACCD5345FE80D54F /* PanelManager.swift in Sources */,
+				9ACCDF0344FDAEF2E5461D94 /* PanelState.swift in Sources */,
+				3D97054ED2AE6BA41481D2B5 /* SettingsStore.swift in Sources */,
+				AC1675D9FCA67E14E7C88FFD /* SettingsView.swift in Sources */,
+				FC4B741F2CC591BC94ED1E52 /* ToolPreset.swift in Sources */,
+				703CC639929B9213BA5CC780 /* UserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57EA1461F356E33FDEBD5C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Lumiere.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumiere.app;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		882DE8B788FE3F9F1B02E2F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Lumiere.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumiere.app;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B51D91B6AD0204BEA151ACE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EB47DC6AD30D87DE4FA4C331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F1559C31FD31817521AB845 /* Build configuration list for PBXNativeTarget "Lumiere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882DE8B788FE3F9F1B02E2F8 /* Debug */,
+				57EA1461F356E33FDEBD5C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C757404B69530CE0EE14CFF7 /* Build configuration list for PBXProject "Lumiere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B51D91B6AD0204BEA151ACE9 /* Debug */,
+				EB47DC6AD30D87DE4FA4C331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C09B2CA9C2A9695457A36D97 /* Project object */;
+}
