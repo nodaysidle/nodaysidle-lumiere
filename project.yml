@@ -14,5 +14,17 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: com.lumiere.app
       SWIFT_VERSION: 6.0
       GENERATE_INFOPLIST_FILE: YES
-    entitlements:
-      path: Lumiere.entitlements
+      CODE_SIGN_ENTITLEMENTS: Lumiere.entitlements
+  LumiereTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: LumiereTests
+    dependencies:
+      - target: Lumiere
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.lumiere.tests
+      SWIFT_VERSION: 6.0
+      GENERATE_INFOPLIST_FILE: YES
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Lumiere.app/Contents/MacOS/Lumiere"
+      BUNDLE_LOADER: "$(TEST_HOST)"

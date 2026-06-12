@@ -9,6 +9,7 @@ Lumiere is a native macOS 15+ screenshot polish and annotation app for turning c
 - Platform: macOS 15.0+
 - Stack: Swift 6, SwiftUI, AppKit, Combine, SwiftData, Core Image/Vision/Core ML framework APIs
 - Build: verified locally with Xcode Debug build
+- Tests: Xcode unit-test target included and verified locally
 - Distribution: source-ready for private GitHub; GitHub Actions workflow included
 - Release signing/notarization: not configured yet
 
@@ -51,6 +52,17 @@ Important files:
 - `Lumiere/Resources/Brand/LumiereLogo.svg` — source logo
 - `.github/workflows/build.yml` — GitHub Actions Debug build workflow
 
+## Test Locally
+
+```bash
+xcodebuild \
+  -project Lumiere.xcodeproj \
+  -scheme Lumiere \
+  -destination 'platform=macOS' \
+  -derivedDataPath build/TestDerivedData \
+  test
+```
+
 ## Build Locally
 
 ```bash
@@ -87,16 +99,16 @@ ditto build/DerivedData/Build/Products/Debug/Lumiere.app /Applications/Lumiere.a
 The included workflow runs on `macos-15` and performs:
 
 1. Xcode version printout
-2. Debug build
-3. code signature verification
-4. Debug `.app` zip packaging
-5. artifact upload
+2. unit tests
+3. Debug build
+4. code signature verification
+5. Debug `.app` zip packaging
+6. artifact upload
 
 No GitHub Release is created by the workflow.
 
 ## Current Known Gaps
 
-- No automated test target exists yet.
 - Release signing/notarization/DMG distribution is not configured yet.
 - Core ML behavior is currently a local heuristic wrapper unless real `.mlmodel` assets are added later.
 - Clipboard-monitor restart behavior still needs full runtime smoke coverage.

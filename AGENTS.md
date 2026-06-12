@@ -64,7 +64,6 @@ ditto build/DerivedData/Build/Products/Debug/Lumiere.app /Applications/Lumiere.a
 
 ## Current Known Gaps
 
-- No test target/files currently verified.
 - Core ML layer currently uses heuristic pixel metrics unless real `.mlmodel` assets are added.
 - Release signing/notarization/DMG flow is not defined yet.
 - Clipboard monitoring restart behavior needs verification/fix before shipping.

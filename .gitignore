@@ -23,3 +23,6 @@ Icon?
 *.dSYM
 *.ipa
 *.hmap
+*.zip
+*.dmg
+dist/

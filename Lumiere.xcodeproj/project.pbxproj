@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A9000011B2C3D4E5F600001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9000111B2C3D4E5F600001 /* Assets.xcassets */; };
-		0A9000021B2C3D4E5F600001 /* LumiereLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */; };
 		175700A91C976AF4A1CF7A05 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72111B23FC7F9309E931CBA2 /* Notifications.swift */; };
 		1ADA74A9AA13471D7F1A0068 /* ImageProcessingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CED40747A760F9250EEFC3B /* ImageProcessingModels.swift */; };
 		2D651C0E644AA426495822E3 /* ClipboardMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */; };
 		330DF538885A6ACD76C55064 /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */; };
+		3633FEABE415E95169FC134D /* LumiereLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 46751D7594FCB83A170E49D4 /* LumiereLogo.svg */; };
 		3D97054ED2AE6BA41481D2B5 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373F4B6D503763994A1F365 /* SettingsStore.swift */; };
+		48773F5840EF9295F9A3CE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A955066D52AD1294FD7095 /* Assets.xcassets */; };
 		54618AFBE1C7C47E12C82F15 /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8A7FFBEC9C9AC79CB30B6 /* Color+Palette.swift */; };
 		5E5535FC61A7103D17260C26 /* DrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E0C3CD415D857B48A3022 /* DrawingLayer.swift */; };
 		674ACC0738BC6D6BA1A458FD /* ImageCaptureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E06858E858EA33F520D055 /* ImageCaptureEvent.swift */; };
@@ -30,20 +30,33 @@
 		B9BFEF6363EC932BC4DBC04F /* LumiereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67C29272774F45F1E4481B6 /* LumiereApp.swift */; };
 		BE33A40AB3C979BE1CC65BD9 /* ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49769371EA639B50DB0155D9 /* ImageDisplayView.swift */; };
 		C13F91259AEF16F170E79E37 /* CoreMLModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43CF5608BDECD210E1D6E77 /* CoreMLModels.swift */; };
+		C61DE5F0D8431966B5DE5AA6 /* LumiereModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2758F04C5550DFFCD2D12BCD /* LumiereModelTests.swift */; };
 		C78F076A6B92B1F54CE5DC42 /* CoreMLInferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */; };
 		CC600691A57AA1F35D65961E /* AnnotationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96CAE6B61083F43BF968BDB /* AnnotationLayer.swift */; };
 		FC4B741F2CC591BC94ED1E52 /* ToolPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9583D801A0194AF72825BC69 /* ToolPreset.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		23ADEB0BFA2E2182D9728C1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C09B2CA9C2A9695457A36D97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D059CE1091C04B3632B0619B;
+			remoteInfo = Lumiere;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0A9000111B2C3D4E5F600001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */ = {isa = PBXFileReference; lastKnownFileType = image.svg; path = LumiereLogo.svg; sourceTree = "<group>"; };
 		0373F4B6D503763994A1F365 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		09935ECD3A5B4837DD248EF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E89682CD77EE13499A2BE75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		213AE9F9591FC205539727FD /* LumiereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumiereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23A955066D52AD1294FD7095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2758F04C5550DFFCD2D12BCD /* LumiereModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiereModelTests.swift; sourceTree = "<group>"; };
 		2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRenderingService.swift; sourceTree = "<group>"; };
 		301CEB0B01AFD70F5775C8B5 /* PanelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelManager.swift; sourceTree = "<group>"; };
 		3483BD7163278207889B92EB /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		46751D7594FCB83A170E49D4 /* LumiereLogo.svg */ = {isa = PBXFileReference; path = LumiereLogo.svg; sourceTree = "<group>"; };
 		49769371EA639B50DB0155D9 /* ImageDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView.swift; sourceTree = "<group>"; };
 		52D8A7FFBEC9C9AC79CB30B6 /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
 		6ADD8C7FB3DE96FB5EC62FE2 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
@@ -66,23 +79,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		0A9000211B2C3D4E5F600001 /* Brand */ = {
-			isa = PBXGroup;
-			children = (
-				0A9000121B2C3D4E5F600001 /* LumiereLogo.svg */,
-			);
-			path = Brand;
-			sourceTree = "<group>";
-		};
-		0A9000221B2C3D4E5F600001 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0A9000111B2C3D4E5F600001 /* Assets.xcassets */,
-				0A9000211B2C3D4E5F600001 /* Brand */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		0EF27D9DCBD7A0F63C80F906 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +99,15 @@
 				0373F4B6D503763994A1F365 /* SettingsStore.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2E53EB15ACB61332E0B4F340 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				23A955066D52AD1294FD7095 /* Assets.xcassets */,
+				CB03AC09F5F82A6B50EFBFB1 /* Brand */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3470C578329729D9ED3E2CC4 /* Events */ = {
@@ -138,7 +143,7 @@
 				45BB291E04F094A858111654 /* Core */,
 				34C1E65B32394F87B73052F3 /* Features */,
 				E9D0089D51C1A11CDB8B256C /* Models */,
-				0A9000221B2C3D4E5F600001 /* Resources */,
+				2E53EB15ACB61332E0B4F340 /* Resources */,
 			);
 			path = Lumiere;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				374417060A3D4E6210976006 /* Lumiere */,
+				CDCF5C69C2DD68B8939E85AB /* LumiereTests */,
 				FF40B2901E3EB0FF06319842 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,6 +220,22 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		CB03AC09F5F82A6B50EFBFB1 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				46751D7594FCB83A170E49D4 /* LumiereLogo.svg */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		CDCF5C69C2DD68B8939E85AB /* LumiereTests */ = {
+			isa = PBXGroup;
+			children = (
+				2758F04C5550DFFCD2D12BCD /* LumiereModelTests.swift */,
+			);
+			path = LumiereTests;
+			sourceTree = "<group>";
+		};
 		E9D0089D51C1A11CDB8B256C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A15E6FD2DA369CE1FF5A2E /* Lumiere.app */,
+				213AE9F9591FC205539727FD /* LumiereTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,12 +261,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6912ED6DB477848A9A4BCA72 /* LumiereTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6C02573E8507E0139CE390 /* Build configuration list for PBXNativeTarget "LumiereTests" */;
+			buildPhases = (
+				F55EAA7324C4312876465BE3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF2C83404E480EE53F4AF67 /* PBXTargetDependency */,
+			);
+			name = LumiereTests;
+			packageProductDependencies = (
+			);
+			productName = LumiereTests;
+			productReference = 213AE9F9591FC205539727FD /* LumiereTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D059CE1091C04B3632B0619B /* Lumiere */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F1559C31FD31817521AB845 /* Build configuration list for PBXNativeTarget "Lumiere" */;
 			buildPhases = (
-				0A9000311B2C3D4E5F600001 /* Resources */,
 				2AF4C85ADE81E6677F6DFD73 /* Sources */,
+				246800882FF1B07103F91042 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -264,9 +305,10 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = C757404B69530CE0EE14CFF7 /* Build configuration list for PBXProject "Lumiere" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -276,25 +318,27 @@
 			mainGroup = 46A76ED5AD1E7F1C1C941389;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = FF40B2901E3EB0FF06319842 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D059CE1091C04B3632B0619B /* Lumiere */,
+				6912ED6DB477848A9A4BCA72 /* LumiereTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0A9000311B2C3D4E5F600001 /* Resources */ = {
+		246800882FF1B07103F91042 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9000011B2C3D4E5F600001 /* Assets.xcassets in Resources */,
-				0A9000021B2C3D4E5F600001 /* LumiereLogo.svg in Resources */,
+				48773F5840EF9295F9A3CE37 /* Assets.xcassets in Resources */,
+				3633FEABE415E95169FC134D /* LumiereLogo.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-	/* End PBXResourcesBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2AF4C85ADE81E6677F6DFD73 /* Sources */ = {
@@ -328,7 +372,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F55EAA7324C4312876465BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C61DE5F0D8431966B5DE5AA6 /* LumiereModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDF2C83404E480EE53F4AF67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D059CE1091C04B3632B0619B /* Lumiere */;
+			targetProxy = 23ADEB0BFA2E2182D9728C1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		57EA1461F356E33FDEBD5C32 /* Release */ = {
@@ -348,6 +408,24 @@
 			};
 			name = Release;
 		};
+		60B91C189FEC95C5D9F5A27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumiere.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumiere.app/Contents/MacOS/Lumiere";
+			};
+			name = Release;
+		};
 		882DE8B788FE3F9F1B02E2F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,6 +440,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lumiere.app;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		9F070B26035B0BBD01DCE1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumiere.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumiere.app/Contents/MacOS/Lumiere";
 			};
 			name = Debug;
 		};
@@ -424,7 +520,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -480,13 +576,22 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C6C02573E8507E0139CE390 /* Build configuration list for PBXNativeTarget "LumiereTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F070B26035B0BBD01DCE1F7 /* Debug */,
+				60B91C189FEC95C5D9F5A27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		2F1559C31FD31817521AB845 /* Build configuration list for PBXNativeTarget "Lumiere" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
