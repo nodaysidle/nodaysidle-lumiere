@@ -111,8 +111,8 @@ No GitHub Release is created by the workflow.
 
 - Release signing/notarization/DMG distribution is not configured yet.
 - Core ML behavior is currently a local heuristic wrapper unless real `.mlmodel` assets are added later.
-- Clipboard-monitor restart behavior still needs full runtime smoke coverage.
-- Annotation preview/export alignment still needs visual smoke coverage.
+- Clipboard-monitor restart behavior has deterministic unit coverage for stop/start publishing.
+- Annotation preview/export coordinate semantics have deterministic unit coverage; full interactive visual QA remains a pre-public-release gate.
 
 ## Non-Goals
 

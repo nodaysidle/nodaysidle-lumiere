@@ -20,6 +20,7 @@
 		703CC639929B9213BA5CC780 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3483BD7163278207889B92EB /* UserSettings.swift */; };
 		7907A96A0074DD612E0CB78F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D0FA0640765C6717ED2E2D /* Logger.swift */; };
 		7D12DD5A237B2871A618F055 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09935ECD3A5B4837DD248EF2 /* ContentView.swift */; };
+		7F2889DE040E0B2E4E8DE11D /* AnnotationExportCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0468CA28E060D8006E08ADA /* AnnotationExportCoordinates.swift */; };
 		8499558DACCD5345FE80D54F /* PanelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CEB0B01AFD70F5775C8B5 /* PanelManager.swift */; };
 		8F30884C720A59D0C5B0525A /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD8C7FB3DE96FB5EC62FE2 /* Annotation.swift */; };
 		91735C2A045F562374B2D055 /* AnnotationRenderingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */; };
@@ -73,6 +74,7 @@
 		E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLInferenceService.swift; sourceTree = "<group>"; };
 		E5F8177FB8F8D3B95D46B155 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
+		F0468CA28E060D8006E08ADA /* AnnotationExportCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationExportCoordinates.swift; sourceTree = "<group>"; };
 		F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitorService.swift; sourceTree = "<group>"; };
 		F9A15E6FD2DA369CE1FF5A2E /* Lumiere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumiere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE7229FBABC59BFD11CBF3C /* PanelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelState.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		17CEA63A0FF690F3E9F6CB62 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F0468CA28E060D8006E08ADA /* AnnotationExportCoordinates.swift */,
 				2E2C6AEA9CDF70F5A65451DC /* AnnotationRenderingService.swift */,
 				F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */,
 				E434DABFD2608312A4E4B718 /* CoreMLInferenceService.swift */,
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F30884C720A59D0C5B0525A /* Annotation.swift in Sources */,
+				7F2889DE040E0B2E4E8DE11D /* AnnotationExportCoordinates.swift in Sources */,
 				CC600691A57AA1F35D65961E /* AnnotationLayer.swift in Sources */,
 				91735C2A045F562374B2D055 /* AnnotationRenderingService.swift in Sources */,
 				2D651C0E644AA426495822E3 /* ClipboardMonitorService.swift in Sources */,

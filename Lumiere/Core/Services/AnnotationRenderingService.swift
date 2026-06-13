@@ -259,15 +259,10 @@ final class AnnotationRenderingService {
     }
 
     private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
-        CGPoint(x: point.x * size.width, y: (1 - point.y) * size.height)
+        AnnotationExportCoordinates.point(point, in: size)
     }
 
     private func denormalize(_ rect: CGRect, in size: CGSize) -> CGRect {
-        CGRect(
-            x: rect.origin.x * size.width,
-            y: (1 - rect.origin.y - rect.size.height) * size.height,
-            width: rect.size.width * size.width,
-            height: rect.size.height * size.height
-        )
+        AnnotationExportCoordinates.rect(rect, in: size)
     }
 }

@@ -66,8 +66,8 @@ ditto build/DerivedData/Build/Products/Debug/Lumiere.app /Applications/Lumiere.a
 
 - Core ML layer currently uses heuristic pixel metrics unless real `.mlmodel` assets are added.
 - Release signing/notarization/DMG flow is not defined yet.
-- Clipboard monitoring restart behavior needs verification/fix before shipping.
-- Annotation preview/export coordinate alignment needs visual smoke verification before shipping.
+- Clipboard monitoring restart behavior has deterministic stop/start unit coverage.
+- Annotation preview/export coordinate semantics have deterministic unit coverage; full interactive visual QA remains a pre-public-release gate.
 
 ## Verification Gates
 

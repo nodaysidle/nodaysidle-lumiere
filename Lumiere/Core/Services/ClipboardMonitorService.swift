@@ -55,7 +55,6 @@ final class ClipboardMonitorService {
         isMonitoring = false
         timer?.invalidate()
         timer = nil
-        subject.send(completion: .finished)
         logger.info("Clipboard monitoring stopped")
     }
 
@@ -115,11 +114,11 @@ final class ClipboardMonitorService {
         let supportedExtensions = Set(["png", "jpg", "jpeg", "heic", "tif", "tiff"])
         let pathExtension = url.pathExtension.lowercased()
         guard supportedExtensions.contains(pathExtension) else {
-            throw PasteboardError.invalidImageType
+            return nil
         }
 
         guard let image = NSImage(contentsOf: url) else {
-            throw PasteboardError.pasteboardReadFailure
+            return nil
         }
 
         let source: ImageCaptureEvent.ClipboardSource = url.lastPathComponent.localizedCaseInsensitiveContains("screen")
@@ -144,7 +143,8 @@ final class ClipboardMonitorService {
 
         for type in supportedTypes where pasteboard.types?.contains(type) == true {
             guard let data = pasteboard.data(forType: type), let image = NSImage(data: data) else {
-                throw PasteboardError.pasteboardReadFailure
+                logger.debug("Skipping unreadable pasteboard image data for type \(type.rawValue, privacy: .public)")
+                continue
             }
 
             let source: ImageCaptureEvent.ClipboardSource = type == .png ? .screenshot : .copy
