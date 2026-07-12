@@ -65,7 +65,7 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(minWidth: 980, minHeight: 720)
+        .frame(minWidth: 720, minHeight: 520)
         .onPasteCommand(of: [.png, .jpeg, .fileURL, .tiff]) { providers in
             for provider in providers where provider.canLoadObject(ofClass: NSImage.self) {
                 _ = provider.loadObject(ofClass: NSImage.self) { image, _ in

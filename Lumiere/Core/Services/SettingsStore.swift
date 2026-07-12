@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 import SwiftData
 
@@ -8,8 +9,8 @@ final class SettingsStore: ObservableObject {
 
     private let logger = LumiereLogger.ui
     private let maxRecentFiles = 10
-    private let modelContainer: ModelContainer
-    private let modelContext: ModelContext
+    private var modelContainer: ModelContainer!
+    private var modelContext: ModelContext!
 
     init() {
         do {
@@ -21,7 +22,40 @@ final class SettingsStore: ObservableObject {
             settings = loadSettings()
             recentFiles = getRecentFiles()
         } catch {
-            fatalError("Failed to initialize SettingsStore: \(error.localizedDescription)")
+            logger.fault("Failed to initialize SettingsStore: \(error.localizedDescription) — falling back to in-memory defaults")
+            do {
+                let schema = Schema([UserSettings.self])
+                let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+                modelContainer = try ModelContainer(for: schema, configurations: [config])
+                modelContext = modelContainer.mainContext
+                settings = UserSettings(toolPresets: ToolPreset.defaultPresets())
+                modelContext.insert(settings)
+                recentFiles = []
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Settings Storage Issue"
+                    alert.informativeText = "Lumiere couldn't access its settings store. Your preferences will not be saved this session.\n\nError: \(error.localizedDescription)"
+                    alert.alertStyle = .warning
+                    alert.addButton(withTitle: "Continue")
+                    alert.runModal()
+                }
+                return
+            } catch {
+                logger.fault("Critical: even in-memory fallback failed: \(error.localizedDescription)")
+                modelContainer = try! ModelContainer(for: Schema([UserSettings.self]), configurations: [ModelConfiguration(isStoredInMemoryOnly: true)])
+                modelContext = modelContainer.mainContext
+                settings = UserSettings(toolPresets: ToolPreset.defaultPresets())
+                recentFiles = []
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Critical Error"
+                    alert.informativeText = "Lumiere encountered a critical initialization error. The app will continue with limited functionality.\n\nError: \(error.localizedDescription)"
+                    alert.alertStyle = .critical
+                    alert.addButton(withTitle: "Continue")
+                    alert.runModal()
+                }
+                return
+            }
         }
     }
 

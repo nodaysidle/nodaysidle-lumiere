@@ -111,7 +111,7 @@ final class PanelManager: NSObject, ObservableObject {
             defer: false
         )
         panel.level = .floating
-        panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle]
+        panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle, .stationary]
         panel.isOpaque = false
         panel.backgroundColor = .clear
         panel.hasShadow = true
@@ -121,6 +121,32 @@ final class PanelManager: NSObject, ObservableObject {
 
         self.panel = panel
         installMouseMonitorIfNeeded()
+        installScreenChangeObserver()
+    }
+
+    private func installScreenChangeObserver() {
+        NotificationCenter.default.addObserver(
+            forName: NSApplication.didChangeScreenParametersNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.clampPanelToVisibleScreen()
+            }
+        }
+    }
+
+    private func clampPanelToVisibleScreen() {
+        guard let panel = panel else { return }
+        let origin = panel.frame.origin
+        let onScreen = NSScreen.screens.contains { screen in
+            screen.visibleFrame.contains(origin)
+        }
+        if !onScreen {
+            let defaultOrigin = resolvedOrigin(for: .zero)
+            panel.setFrameOrigin(defaultOrigin)
+            persist(origin: defaultOrigin)
+        }
     }
 
     private func installMouseMonitorIfNeeded() {
@@ -144,7 +170,15 @@ final class PanelManager: NSObject, ObservableObject {
             return storedOrigin
         }
 
-        guard let screen = NSScreen.main ?? NSScreen.screens.first else {
+        let screen: NSScreen?
+        if let keyWindow = NSApp.keyWindow {
+            screen = keyWindow.screen
+        } else if let mainScreen = NSScreen.main {
+            screen = mainScreen
+        } else {
+            screen = NSScreen.screens.first
+        }
+        guard let screen = screen else {
             return CGPoint(x: 80, y: 80)
         }
 

@@ -1,146 +1,100 @@
 # Lumiere
 
+> Native macOS screenshot polish and annotation — local-first, no network, no accounts.
+
+![Platform](https://img.shields.io/badge/platform-macOS%2015%2B-black?style=flat-square&logo=apple)
+![Swift](https://img.shields.io/badge/Swift-6.0-FA7343?style=flat-square&logo=swift)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+
 ![Lumiere Logo](Lumiere/Resources/Brand/LumiereLogo.svg)
 
-Lumiere is a native macOS 15+ screenshot polish and annotation app for turning clipboard screenshots into clean, exportable visuals. It watches for copied images, applies local image cleanup, provides annotation controls, and exports PNG/JPEG/HEIC without network or backend dependencies.
+## Overview
 
-## Status
+Lumiere is a native macOS app for turning clipboard screenshots into clean, annotated exports. It watches for copied images, applies local image cleanup, provides vector annotation tools, and exports PNG/JPEG/HEIC — all on-device with no network or backend dependencies.
 
-- Platform: macOS 15.0+
-- Stack: Swift 6, SwiftUI, AppKit, Combine, SwiftData, Core Image/Vision/Core ML framework APIs
-- Build: verified locally with Xcode Debug and Release builds
-- Tests: Xcode unit-test target included and verified locally
-- Distribution: private/internal ad-hoc DMG packaging supported
-- Release signing/notarization: not configured yet
+## Features
 
-## Highlights
+- **Auto-capture** — clipboard monitoring detects screenshots and copied images automatically
+- **Shadow styling** — apply directional shadow depth to screenshots
+- **Perspective correction** — auto-detect document edges and correct perspective with Vision framework
+- **Vector annotations** — arrow, rectangle, text, callout, and blur tools
+- **Floating toolbar** — glass-panel NSPanel with cursor-proximity reveal and hide
+- **Export** — PNG (lossless), JPEG, and HEIC output
+- **Local-first** — no cloud, no telemetry, no accounts
+- **Dark Volt UI** — NODAYSIDLE dark theme with `#C8FF00` accent
 
-- Native dark macOS UI with NODAYSIDLE Volt accent `#C8FF00`
-- Floating `NSPanel` toolbar with polished glass styling
-- Clipboard image monitoring with duplicate debounce
-- Local image processing for shadow styling and perspective correction controls
-- Vector annotation tools for arrows, rectangles, text, and callouts
-- Export to PNG, JPEG, and HEIC
-- Local-only settings persistence
+## Technology
+
+| Area | Technology |
+|------|------------|
+| Language | Swift 6 |
+| Interface | SwiftUI + AppKit (NSPanel, NSPasteboard, NSSavePanel) |
+| Build | Xcode project (`xcodebuild`) |
+| Image Processing | Core Image, Vision framework |
+| Machine Learning | Core ML (heuristic fallback — no `.mlmodel` required) |
+| Storage | SwiftData |
+| Events | Combine |
 
 ## Requirements
 
-- macOS 15.0+
+- macOS 15.0 or later
 - Xcode 16+ / Swift 6+
+- Apple Silicon recommended
+
+## Installation
+
+Download the internal ad-hoc DMG from GitHub Actions artifacts or build from source:
+
+```bash
+xcodebuild -project Lumiere.xcodeproj -scheme Lumiere -configuration Release -derivedDataPath build/InternalReleaseDerivedData clean build
+ditto build/InternalReleaseDerivedData/Build/Products/Release/Lumiere.app /Applications/Lumiere.app
+open /Applications/Lumiere.app
+```
+
+The internal DMG is **not Developer ID signed or notarized**. Right-click → Open on first launch to bypass Gatekeeper.
+
+## Development
+
+```bash
+# Debug build
+xcodebuild -project Lumiere.xcodeproj -scheme Lumiere -configuration Debug -derivedDataPath build/DebugDerivedData build
+
+# Run tests (8 tests)
+xcodebuild -project Lumiere.xcodeproj -scheme Lumiere -destination 'platform=macOS' -derivedDataPath build/TestDerivedData test
+
+# Internal DMG
+Scripts/package-internal-dmg.sh
+```
 
 ## Project Structure
 
 ```text
 Lumiere/
-  Core/       logging, orchestration, services, theme
-  Features/   settings and screenshot UI
-  Models/     annotations, image processing, settings models
-  Resources/  app icons and brand assets
+├── Core/                    Logging, services, theme
+│   ├── Services/            ClipboardMonitor, ImageProcessing, CoreML, Annotations, Settings
+│   └── Theme/               Color+Palette (Volt #C8FF00)
+├── Features/
+│   ├── UI/                  Views (ImageDisplay, GlassPanel, DrawingLayer, AnnotationInput), PanelManager
+│   └── Settings/            SettingsView
+├── Models/                  Annotation, ImageProcessing, CaptureEvent, Settings types
+└── Resources/               AppIcon, LumiereLogo.svg
 ```
 
-Important files:
+## Privacy
 
-- `Lumiere/LumiereApp.swift` — app entry point
-- `Lumiere/ContentView.swift` — root view
-- `Lumiere/Core/MainViewModel.swift` — workflow orchestration
-- `Lumiere/Core/Services/ClipboardMonitorService.swift` — pasteboard image monitoring
-- `Lumiere/Core/Services/ImageProcessingPipeline.swift` — image cleanup pipeline
-- `Lumiere/Core/Services/CoreMLInferenceService.swift` — local heuristic/Core ML wrapper
-- `Lumiere/Core/Services/AnnotationRenderingService.swift` — export rendering
-- `Lumiere/Features/UI/Services/PanelManager.swift` — floating panel lifecycle
-- `Lumiere/Resources/Assets.xcassets/AppIcon.appiconset/` — bundled app icon assets
-- `Lumiere/Resources/Brand/LumiereLogo.svg` — source logo
-- `.github/workflows/build.yml` — GitHub Actions test, Release build, and private internal DMG artifact workflow
-- `Scripts/package-internal-dmg.sh` — local/CI internal ad-hoc DMG packaging script
+Lumiere is intentionally local-first:
 
-## Test Locally
+- No network calls
+- No cloud processing
+- No telemetry
+- No accounts
+- All image processing happens on-device
+- Clipboard access is read-only; no clipboard data is persisted beyond the current session
 
-```bash
-xcodebuild \
-  -project Lumiere.xcodeproj \
-  -scheme Lumiere \
-  -destination 'platform=macOS' \
-  -derivedDataPath build/TestDerivedData \
-  test
-```
+## License
 
-## Build Locally
+MIT — see [LICENSE](LICENSE).
 
-```bash
-xcodebuild \
-  -project Lumiere.xcodeproj \
-  -scheme Lumiere \
-  -configuration Release \
-  -derivedDataPath build/InternalReleaseDerivedData \
-  clean build
-```
+## Author
 
-Built app path:
-
-```text
-build/InternalReleaseDerivedData/Build/Products/Release/Lumiere.app
-```
-
-Verify local signature:
-
-```bash
-codesign --verify --deep --strict --verbose=2 build/InternalReleaseDerivedData/Build/Products/Release/Lumiere.app
-```
-
-## Install Locally
-
-After a successful Release build:
-
-```bash
-ditto build/InternalReleaseDerivedData/Build/Products/Release/Lumiere.app /Applications/Lumiere.app
-```
-
-## Internal Private DMG
-
-For internal/private testing only, create an unsigned/ad-hoc DMG:
-
-```bash
-Scripts/package-internal-dmg.sh
-```
-
-Artifacts:
-
-```text
-build/Lumiere-Internal-AdHoc.dmg
-build/Lumiere-Internal-AdHoc.dmg.sha256
-```
-
-The script builds Release, verifies the ad-hoc app signature, verifies bundled icon/logo resources, stages the app with an `/Applications` symlink, creates the DMG, runs `hdiutil verify`, and writes a SHA256 file.
-
-This DMG is not Developer ID signed and not notarized. It is for private/internal testing only and may trigger Gatekeeper friction when copied between machines.
-
-## GitHub Actions
-
-The included workflow runs on `macos-15` and performs:
-
-1. Xcode version printout
-2. unit tests
-3. Release build
-4. ad-hoc signature verification
-5. icon/logo resource verification
-6. internal unsigned/ad-hoc DMG creation
-7. `hdiutil verify`
-8. SHA256 generation
-9. private GitHub Actions artifact upload
-
-No GitHub Release is created by the workflow.
-
-## Current Known Gaps
-
-- Public release signing/notarization is not configured yet.
-- Core ML behavior is currently a local heuristic wrapper unless real `.mlmodel` assets are added later.
-- Clipboard-monitor restart behavior has deterministic unit coverage for stop/start publishing.
-- Annotation preview/export coordinate semantics have deterministic unit coverage; full interactive visual QA remains a pre-public-release gate.
-
-## Non-Goals
-
-- No backend.
-- No cloud processing.
-- No telemetry.
-- No cross-platform rewrite.
-- No third-party model download dependency.
+[NODAYSIDLE](https://nodaysidle.com)

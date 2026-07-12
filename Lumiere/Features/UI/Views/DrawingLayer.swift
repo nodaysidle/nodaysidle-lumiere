@@ -8,21 +8,59 @@ struct DrawingLayer: View {
 
     @State private var dragStart: CGPoint?
     @State private var draftAnnotation: Annotation?
+    @State private var pendingTextPoint: CGPoint?
+    @State private var pendingTextType: AnnotationTool?
 
     var body: some View {
         GeometryReader { proxy in
-            Canvas { context, _ in
-                for annotation in annotations {
-                    draw(annotation, in: &context, isDraft: false, canvasSize: proxy.size)
-                }
+            ZStack {
+                Canvas { context, _ in
+                    for annotation in annotations {
+                        draw(annotation, in: &context, isDraft: false, canvasSize: proxy.size)
+                    }
 
-                if let draftAnnotation {
-                    draw(draftAnnotation, in: &context, isDraft: true, canvasSize: proxy.size)
+                    if let draftAnnotation {
+                        draw(draftAnnotation, in: &context, isDraft: true, canvasSize: proxy.size)
+                    }
+                }
+                .contentShape(Rectangle())
+                .gesture(drawingGesture(in: proxy.size))
+                .allowsHitTesting(isEnabled)
+
+                if let point = pendingTextPoint, let type = pendingTextType {
+                    AnnotationTextInputOverlay(
+                        position: point,
+                        onSubmit: { text in
+                            switch type {
+                            case .text:
+                                annotations.append(.text(TextAnnotation(
+                                    content: text,
+                                    position: normalize(point, in: proxy.size)
+                                )))
+                            case .callout:
+                                let target = normalize(point, in: proxy.size)
+                                let tail = normalize(
+                                    CGPoint(x: max(12, point.x - 60), y: max(12, point.y + 50)),
+                                    in: proxy.size
+                                )
+                                annotations.append(.callout(CalloutAnnotation(
+                                    text: text,
+                                    targetPosition: target,
+                                    tailPosition: tail
+                                )))
+                            default:
+                                break
+                            }
+                            pendingTextPoint = nil
+                            pendingTextType = nil
+                        },
+                        onCancel: {
+                            pendingTextPoint = nil
+                            pendingTextType = nil
+                        }
+                    )
                 }
             }
-            .contentShape(Rectangle())
-            .gesture(drawingGesture(in: proxy.size))
-            .allowsHitTesting(isEnabled)
         }
     }
 
@@ -53,29 +91,11 @@ struct DrawingLayer: View {
                         annotations.append(draftAnnotation)
                     }
                 case .text:
-                    annotations.append(
-                        .text(
-                            TextAnnotation(
-                                content: "Text",
-                                position: normalize(value.location, in: size)
-                            )
-                        )
-                    )
+                    pendingTextPoint = value.location
+                    pendingTextType = .text
                 case .callout:
-                    let target = normalize(value.location, in: size)
-                    let tail = normalize(
-                        CGPoint(x: max(12, value.location.x - 60), y: max(12, value.location.y + 50)),
-                        in: size
-                    )
-                    annotations.append(
-                        .callout(
-                            CalloutAnnotation(
-                                text: "Callout",
-                                targetPosition: target,
-                                tailPosition: tail
-                            )
-                        )
-                    )
+                    pendingTextPoint = value.location
+                    pendingTextType = .callout
                 }
             }
     }

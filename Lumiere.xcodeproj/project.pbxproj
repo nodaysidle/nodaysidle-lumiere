@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1B2C3D4E5F6A7B8C9D0E1F3 /* AnnotationTextInputOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* AnnotationTextInputOverlay.swift */; };
 		175700A91C976AF4A1CF7A05 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72111B23FC7F9309E931CBA2 /* Notifications.swift */; };
 		1ADA74A9AA13471D7F1A0068 /* ImageProcessingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CED40747A760F9250EEFC3B /* ImageProcessingModels.swift */; };
 		2D651C0E644AA426495822E3 /* ClipboardMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415ACEDF2BCBF5D3D114CD8 /* ClipboardMonitorService.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* AnnotationTextInputOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTextInputOverlay.swift; sourceTree = "<group>"; };
 		0373F4B6D503763994A1F365 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		09935ECD3A5B4837DD248EF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E89682CD77EE13499A2BE75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		0EF27D9DCBD7A0F63C80F906 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* AnnotationTextInputOverlay.swift */,
 				DA0E0C3CD415D857B48A3022 /* DrawingLayer.swift */,
 				F00FC8ACE8D3A662843FC81E /* GlassPanel.swift */,
 				49769371EA639B50DB0155D9 /* ImageDisplayView.swift */,
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D4E5F6A7B8C9D0E1F3 /* AnnotationTextInputOverlay.swift in Sources */,
 				8F30884C720A59D0C5B0525A /* Annotation.swift in Sources */,
 				7F2889DE040E0B2E4E8DE11D /* AnnotationExportCoordinates.swift in Sources */,
 				CC600691A57AA1F35D65961E /* AnnotationLayer.swift in Sources */,
