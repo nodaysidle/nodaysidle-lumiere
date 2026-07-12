@@ -43,15 +43,20 @@ Lumiere is a native macOS app for turning clipboard screenshots into clean, anno
 
 ## Installation
 
-Download the internal ad-hoc DMG from GitHub Actions artifacts or build from source:
+Download the latest DMG from [GitHub Releases](https://github.com/nodaysidle/nodaysidle-lumiere/releases):
+
+1. Download `Lumiere-vX.Y.Z-macos.dmg`
+2. Open the DMG and drag `Lumiere.app` to `/Applications`
+3. **Right-click → Open** on first launch to bypass Gatekeeper
+
+Or build from source:
 
 ```bash
-xcodebuild -project Lumiere.xcodeproj -scheme Lumiere -configuration Release -derivedDataPath build/InternalReleaseDerivedData clean build
-ditto build/InternalReleaseDerivedData/Build/Products/Release/Lumiere.app /Applications/Lumiere.app
-open /Applications/Lumiere.app
+Scripts/package-internal-dmg.sh
+open build/Lumiere-Internal-AdHoc.dmg
 ```
 
-The internal DMG is **not Developer ID signed or notarized**. Right-click → Open on first launch to bypass Gatekeeper.
+The DMG is **not Developer ID signed or notarized**. Right-click → Open on first launch to bypass Gatekeeper. For NDI/Kaly internal use and trusted installs only.
 
 ## Development
 
