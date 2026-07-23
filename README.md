@@ -1,3 +1,5 @@
+<img src=".github/social-preview.png" alt="Lumiere — NODAYSIDLE" width="100%">
+
 # Lumiere
 
 > Native macOS screenshot polish and annotation — local-first, no network, no accounts.
