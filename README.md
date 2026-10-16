@@ -45,20 +45,19 @@ Lumiere is a native macOS app for turning clipboard screenshots into clean, anno
 
 ## Installation
 
-Download the latest DMG from [GitHub Releases](https://github.com/nodaysidle/nodaysidle-lumiere/releases):
+The latest release ([v0.1.1](https://github.com/nodaysidle/nodaysidle-lumiere/releases/tag/v0.1.1)) has no downloadable assets. The newest pre-built app is [`Lumiere-v0.1.0-macos.dmg`](https://github.com/nodaysidle/nodaysidle-lumiere/releases/download/v0.1.0/Lumiere-v0.1.0-macos.dmg) on [v0.1.0](https://github.com/nodaysidle/nodaysidle-lumiere/releases/tag/v0.1.0) (no checksum file is attached).
 
-1. Download `Lumiere-vX.Y.Z-macos.dmg`
-2. Open the DMG and drag `Lumiere.app` to `/Applications`
-3. **Right-click → Open** on first launch to bypass Gatekeeper
+1. Open the DMG and drag `Lumiere.app` to `/Applications`
+2. **Right-click → Open** on first launch to bypass Gatekeeper
 
-Or build from source:
+Or build from source (macOS 15+, Xcode):
 
 ```bash
 Scripts/package-internal-dmg.sh
 open build/Lumiere-Internal-AdHoc.dmg
 ```
 
-The DMG is **not Developer ID signed or notarized**. Right-click → Open on first launch to bypass Gatekeeper. For NDI/Kaly internal use and trusted installs only.
+The DMG is **not Developer ID signed or notarized**. For NDI/Kaly internal use and trusted installs only.
 
 ## Development
 
@@ -100,8 +99,8 @@ Lumiere is intentionally local-first:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT.
 
 ## Author
 
-[NODAYSIDLE](https://nodaysidle.com)
+[NODAYSIDLE](https://github.com/nodaysidle)
